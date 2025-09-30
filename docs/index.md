@@ -2,7 +2,7 @@
 
 Things to explain:
 
-- What is LARA
+- What is the LARA suite
 - adaptation template
 - what are processes
 - what are workers
