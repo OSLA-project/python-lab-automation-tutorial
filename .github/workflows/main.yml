@@ -1,0 +1,10 @@
+name: Deploy pages
+on: [release]
+
+jobs:
+  release_pages:
+    name: push new content to gh-pages
+    runs-on: ubuntu-22.04
+    steps:
+      - name: deploy
+        uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
