@@ -1,1 +1,1 @@
-# LARA-tutorial
+# Python lab automation tutorial
