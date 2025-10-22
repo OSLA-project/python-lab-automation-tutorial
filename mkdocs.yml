@@ -21,3 +21,5 @@ theme:
 plugins:
   - search
   - mermaid2
+  - panzoom:
+      full_screen: true
