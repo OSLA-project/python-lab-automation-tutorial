@@ -1,0 +1,2346 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../advanced-usage/">
+      
+      
+        <link rel="next" href="../getting-started/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>API Reference - Lab automation docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lab automation docs" class="md-header__button md-logo" aria-label="Lab automation docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lab automation docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lab automation docs" class="md-nav__button md-logo" aria-label="Lab automation docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Lab automation docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wrappers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wrappers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Laborchestrator
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Laborchestrator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Orchestrator Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/api-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/sila-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SiLA Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laborchestrator/writing-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Platform status db
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Platform status db
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform Status DB Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statusdbimplementation-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      StatusDBImplementation Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StatusDBImplementation Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratory-configuration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laboratory Configuration Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laboratory Configuration Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_lab_from_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_lab_from_config()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe_lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      wipe_lab()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe_lara" class="md-nav__link">
+    <span class="md-ellipsis">
+      wipe_lara()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_all_positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_positions()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      position_empty()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_container_at_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_container_at_position()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_cont_info_by_barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_cont_info_by_barcode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moved_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      moved_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_barcode()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lid-management-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lid Management Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lid Management Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unlidded_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      unlidded_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidded_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      lidded_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_lid_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_lid_position()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-and-experiment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process and Experiment Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process and Experiment Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_process_to_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_process_to_db()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_available_processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_available_processes()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_process" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_process()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_experiment()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe_step_to_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      safe_step_to_db()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duration-estimation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration Estimation Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duration Estimation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_estimated_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_estimated_duration()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_estimated_durations" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_estimated_durations()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certificate-management-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate Management Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Management Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write_server_certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_server_certificate()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_server_certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_server_certificate()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProcessStep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movestep" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoveStep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Managing Containers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Managing Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pythonlab
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Pythonlab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonlab/builtin_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Built-in Service Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonlab/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonlab/processes_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start Guide: Writing Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonlab/workflow_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Graph Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonlab/writing_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing PLProcessReader-Compliant Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statusdbimplementation-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      StatusDBImplementation Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StatusDBImplementation Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laboratory-configuration-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laboratory Configuration Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laboratory Configuration Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_lab_from_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_lab_from_config()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe_lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      wipe_lab()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe_lara" class="md-nav__link">
+    <span class="md-ellipsis">
+      wipe_lara()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Device Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_all_positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_all_positions()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      position_empty()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Container Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_container_at_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_container_at_position()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_cont_info_by_barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_cont_info_by_barcode()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moved_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      moved_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_barcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_barcode()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lid-management-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lid Management Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lid Management Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unlidded_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      unlidded_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidded_container" class="md-nav__link">
+    <span class="md-ellipsis">
+      lidded_container()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_lid_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_lid_position()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-and-experiment-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process and Experiment Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process and Experiment Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_process_to_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_process_to_db()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_available_processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_available_processes()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_process" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_process()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_experiment()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe_step_to_db" class="md-nav__link">
+    <span class="md-ellipsis">
+      safe_step_to_db()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duration-estimation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration Estimation Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Duration Estimation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_estimated_duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_estimated_duration()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_estimated_durations" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_estimated_durations()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certificate-management-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate Management Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate Management Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#write_server_certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      write_server_certificate()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_server_certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_server_certificate()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      ProcessStep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movestep" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoveStep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API Reference</h1>
+<p>This document provides a complete reference for the <code>StatusDBImplementation</code> class, which is the main API for interacting with Platform Status DB.</p>
+<h2 id="statusdbimplementation-class">StatusDBImplementation Class</h2>
+<p>The <code>StatusDBImplementation</code> class implements the <code>StatusDBInterface</code> from the laborchestrator package, providing database operations for laboratory automation platforms.</p>
+<h3 id="import">Import</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">platform_status_db.larastatus.status_db_implementation</span><span class="w"> </span><span class="kn">import</span> <span class="n">StatusDBImplementation</span>
+</span></code></pre></div>
+<h3 id="initialization">Initialization</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">db</span> <span class="o">=</span> <span class="n">StatusDBImplementation</span><span class="p">(</span><span class="n">db_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>db_path</code> (str, optional): Path to the database directory. If not provided, uses the default Django database configuration.</p>
+<p><strong>Returns</strong>: Instance of <code>StatusDBImplementation</code></p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Use default configuration</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">db</span> <span class="o">=</span> <span class="n">StatusDBImplementation</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Use custom path</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">db</span> <span class="o">=</span> <span class="n">StatusDBImplementation</span><span class="p">(</span><span class="n">db_path</span><span class="o">=</span><span class="s2">&quot;/path/to/custom/db&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="laboratory-configuration-methods">Laboratory Configuration Methods</h2>
+<h3 id="create_lab_from_config">create_lab_from_config()</h3>
+<p>Creates laboratory devices and positions from a YAML configuration file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">db</span><span class="o">.</span><span class="n">create_lab_from_config</span><span class="p">(</span><span class="n">lab_config_file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>lab_config_file_path</code> (str): Path to YAML configuration file</p>
+<p><strong>Configuration File Format</strong>:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">sila_servers</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">device_type_1</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">DeviceName1</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">capacity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;device_type&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">device_type_2</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">DeviceName2</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">capacity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;device_type&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">db</span><span class="o">.</span><span class="n">create_lab_from_config</span><span class="p">(</span><span class="s2">&quot;lab_config.yaml&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:64</p>
+<hr />
+<h3 id="wipe_lab">wipe_lab()</h3>
+<p>Removes all devices and marks all containers as removed. Use with caution!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">db</span><span class="o">.</span><span class="n">wipe_lab</span><span class="p">()</span>
+</span></code></pre></div>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">db</span><span class="o">.</span><span class="n">wipe_lab</span><span class="p">()</span>  <span class="c1"># Clears entire laboratory configuration</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:57</p>
+<hr />
+<h3 id="wipe_lara">wipe_lara()</h3>
+<p>Alias for <code>wipe_lab()</code>. Deprecated, use <code>wipe_lab()</code> instead.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">db</span><span class="o">.</span><span class="n">wipe_lara</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="device-methods">Device Methods</h2>
+<h3 id="get_all_positions">get_all_positions()</h3>
+<p>Returns a list of all position indices for a given device.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_all_positions</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>device</code> (str): Name of the device (lara_name)</p>
+<p><strong>Returns</strong>: List of integers representing position indices (0-indexed)</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">positions</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_all_positions</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:78</p>
+<hr />
+<h3 id="position_empty">position_empty()</h3>
+<p>Checks if a specific position on a device is empty (no container or lid).</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">db</span><span class="o">.</span><span class="n">position_empty</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>device</code> (str): Name of the device
+- <code>pos</code> (int): Position index (0-indexed)</p>
+<p><strong>Returns</strong>: <code>True</code> if position is empty, <code>False</code> if occupied</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">if</span> <span class="n">db</span><span class="o">.</span><span class="n">position_empty</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position is available&quot;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position is occupied&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:115</p>
+<hr />
+<h2 id="container-methods">Container Methods</h2>
+<h3 id="add_container">add_container()</h3>
+<p>Adds a new container to the database at its current position.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">db</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="n">cont</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont</code> (structures.ContainerInfo): Container information object from laborchestrator</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">laborchestrator</span><span class="w"> </span><span class="kn">import</span> <span class="n">structures</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">container_info</span> <span class="o">=</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">(</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Plate001&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">current_device</span><span class="o">=</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="n">current_pos</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">barcode</span><span class="o">=</span><span class="s2">&quot;BC12345&quot;</span><span class="p">,</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">lidded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">filled</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">db</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="n">container_info</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:226</p>
+<hr />
+<h3 id="get_container_at_position">get_container_at_position()</h3>
+<p>Retrieves container information at a specific position.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_container_at_position</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>device</code> (str): Name of the device
+- <code>pos</code> (int): Position index</p>
+<p><strong>Returns</strong>: <code>ContainerInfo</code> object if container exists, <code>None</code> if position is empty</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_container_at_position</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">if</span> <span class="n">container</span><span class="p">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found: </span><span class="si">{</span><span class="n">container</span><span class="o">.</span><span class="n">barcode</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position is empty&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:128</p>
+<hr />
+<h3 id="get_cont_info_by_barcode">get_cont_info_by_barcode()</h3>
+<p>Retrieves container information by barcode.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="n">barcode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>barcode</code> (str): Barcode identifier</p>
+<p><strong>Returns</strong>: <code>ContainerInfo</code> object</p>
+<p><strong>Raises</strong>: May raise exception if container not found</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Container at: </span><span class="si">{</span><span class="n">container</span><span class="o">.</span><span class="n">current_device</span><span class="si">}</span><span class="s2">[</span><span class="si">{</span><span class="n">container</span><span class="o">.</span><span class="n">current_pos</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:207</p>
+<hr />
+<h3 id="moved_container">moved_container()</h3>
+<p>Records a container movement from one position to another.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">db</span><span class="o">.</span><span class="n">moved_container</span><span class="p">(</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">source_device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">source_pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">target_device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="n">target_pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="n">barcode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>source_device</code> (str): Source device name
+- <code>source_pos</code> (int): Source position index
+- <code>target_device</code> (str): Target device name
+- <code>target_pos</code> (int): Target position index
+- <code>barcode</code> (str, optional): Container barcode for verification (recommended if multiple containers at source)</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">db</span><span class="o">.</span><span class="n">moved_container</span><span class="p">(</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">source_device</span><span class="o">=</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">source_pos</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">target_device</span><span class="o">=</span><span class="s2">&quot;PlateReader&quot;</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">target_pos</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="n">barcode</span><span class="o">=</span><span class="s2">&quot;BC12345&quot;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:149</p>
+<hr />
+<h3 id="remove_container">remove_container()</h3>
+<p>Marks a container as removed from the platform (soft delete).</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">db</span><span class="o">.</span><span class="n">remove_container</span><span class="p">(</span><span class="n">cont</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont</code> (structures.ContainerInfo): Container to remove</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">db</span><span class="o">.</span><span class="n">remove_container</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:244</p>
+<hr />
+<h3 id="set_barcode">set_barcode()</h3>
+<p>Updates the barcode of a container.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">db</span><span class="o">.</span><span class="n">set_barcode</span><span class="p">(</span><span class="n">cont</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont</code> (structures.ContainerInfo): Container with updated barcode</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_container_at_position</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">container</span><span class="o">.</span><span class="n">barcode</span> <span class="o">=</span> <span class="s2">&quot;NEW_BC001&quot;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">db</span><span class="o">.</span><span class="n">set_barcode</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:272</p>
+<hr />
+<h2 id="lid-management-methods">Lid Management Methods</h2>
+<h3 id="unlidded_container">unlidded_container()</h3>
+<p>Records that a container's lid has been removed and placed at a specific location.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">db</span><span class="o">.</span><span class="n">unlidded_container</span><span class="p">(</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="n">cont_info</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="n">lid_device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="n">lid_pos</span><span class="p">:</span> <span class="nb">int</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont_info</code> (structures.ContainerInfo): Container being unlidded
+- <code>lid_device</code> (str): Device where lid is placed
+- <code>lid_pos</code> (int): Position where lid is placed</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">db</span><span class="o">.</span><span class="n">unlidded_container</span><span class="p">(</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="n">cont_info</span><span class="o">=</span><span class="n">container</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="n">lid_device</span><span class="o">=</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    <span class="n">lid_pos</span><span class="o">=</span><span class="mi">10</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:177</p>
+<hr />
+<h3 id="lidded_container">lidded_container()</h3>
+<p>Records that a container's lid has been replaced.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">db</span><span class="o">.</span><span class="n">lidded_container</span><span class="p">(</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">cont_info</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">lid_device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="n">lid_pos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont_info</code> (structures.ContainerInfo): Container being lidded
+- <code>lid_device</code> (str, optional): Device where lid was stored (for verification)
+- <code>lid_pos</code> (int, optional): Position where lid was stored (for verification)</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">db</span><span class="o">.</span><span class="n">lidded_container</span><span class="p">(</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="n">cont_info</span><span class="o">=</span><span class="n">container</span><span class="p">,</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>    <span class="n">lid_device</span><span class="o">=</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    <span class="n">lid_pos</span><span class="o">=</span><span class="mi">10</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:189</p>
+<hr />
+<h3 id="update_lid_position">update_lid_position()</h3>
+<p>Updates the lid position information for a container.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">db</span><span class="o">.</span><span class="n">update_lid_position</span><span class="p">(</span><span class="n">cont</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>cont</code> (structures.ContainerInfo): Container with updated lid information</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">container</span><span class="o">.</span><span class="n">lid_site</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LidStorage&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">container</span><span class="o">.</span><span class="n">lidded</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">db</span><span class="o">.</span><span class="n">update_lid_position</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:280</p>
+<hr />
+<h2 id="process-and-experiment-methods">Process and Experiment Methods</h2>
+<h3 id="add_process_to_db">add_process_to_db()</h3>
+<p>Adds a reusable process definition to the database.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">db</span><span class="o">.</span><span class="n">add_process_to_db</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">src</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>name</code> (str): Name of the process
+- <code>src</code> (str): Source code or description of the process</p>
+<p><strong>Returns</strong>: UUID string for the process</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">process_uuid</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">add_process_to_db</span><span class="p">(</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Standard Assay&quot;</span><span class="p">,</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    <span class="n">src</span><span class="o">=</span><span class="s2">&quot;def standard_assay():</span><span class="se">\n</span><span class="s2">    ...&quot;</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="p">)</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Process UUID: </span><span class="si">{</span><span class="n">process_uuid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:83</p>
+<hr />
+<h3 id="get_available_processes">get_available_processes()</h3>
+<p>Returns a list of all available processes in the database.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_available_processes</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
+</span></code></pre></div>
+<p><strong>Returns</strong>: List of tuples containing (process_name, process_uuid)</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">processes</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_available_processes</span><span class="p">()</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">uuid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:92</p>
+<hr />
+<h3 id="get_process">get_process()</h3>
+<p>Retrieves the source code/description of a process by UUID.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_process</span><span class="p">(</span><span class="n">process_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>process_id</code> (str): UUID of the process</p>
+<p><strong>Returns</strong>: Source code or description string</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">process_code</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_process</span><span class="p">(</span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">)</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">process_code</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:102</p>
+<hr />
+<h3 id="create_experiment">create_experiment()</h3>
+<p>Creates a new experiment instance based on a process.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">db</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">process_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>process_id</code> (str): UUID of the process to use</p>
+<p><strong>Returns</strong>: UUID string for the experiment</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">experiment_uuid</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">process_uuid</span><span class="p">)</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experiment UUID: </span><span class="si">{</span><span class="n">experiment_uuid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:106</p>
+<hr />
+<h3 id="safe_step_to_db">safe_step_to_db()</h3>
+<p>Saves a completed process step to the database.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">db</span><span class="o">.</span><span class="n">safe_step_to_db</span><span class="p">(</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="n">step</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ProcessStep</span><span class="p">,</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="n">container_info</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ContainerInfo</span><span class="p">,</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    <span class="n">experiment_uuid</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>step</code> (structures.ProcessStep): The completed process step (must have start and finish times)
+- <code>container_info</code> (structures.ContainerInfo): Container involved in the step (can be None)
+- <code>experiment_uuid</code> (str): UUID of the experiment</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Note</strong>: For <code>MoveStep</code> instances, creates a <code>MoveStep</code> database record. For other steps, creates a <code>ProcessStep</code> record.</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">laborchestrator</span><span class="w"> </span><span class="kn">import</span> <span class="n">structures</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="n">step</span> <span class="o">=</span> <span class="n">structures</span><span class="o">.</span><span class="n">ProcessStep</span><span class="p">(</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Read Absorbance&quot;</span><span class="p">,</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>    <span class="n">main_device</span><span class="o">=</span><span class="n">structures</span><span class="o">.</span><span class="n">DeviceInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;PlateReader&quot;</span><span class="p">),</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fct&quot;</span><span class="p">:</span> <span class="s2">&quot;absorbance&quot;</span><span class="p">,</span> <span class="s2">&quot;wavelength&quot;</span><span class="p">:</span> <span class="mi">450</span><span class="p">}</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="p">)</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="n">step</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="c1"># ... perform operation ...</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="n">step</span><span class="o">.</span><span class="n">finish</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="n">step</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;completed&quot;</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="n">db</span><span class="o">.</span><span class="n">safe_step_to_db</span><span class="p">(</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>    <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>    <span class="n">container_info</span><span class="o">=</span><span class="n">container</span><span class="p">,</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>    <span class="n">experiment_uuid</span><span class="o">=</span><span class="n">experiment_uuid</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:368</p>
+<hr />
+<h2 id="duration-estimation-methods">Duration Estimation Methods</h2>
+<h3 id="get_estimated_duration">get_estimated_duration()</h3>
+<p>Estimates the duration of a process step based on historical data.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_estimated_duration</span><span class="p">(</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="n">step</span><span class="p">:</span> <span class="n">structures</span><span class="o">.</span><span class="n">ProcessStep</span><span class="p">,</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>step</code> (structures.ProcessStep): The step to estimate
+- <code>confidence</code> (float): Confidence level (default 0.95)</p>
+<p><strong>Returns</strong>: Estimated duration in seconds, or <code>None</code> if no historical data available</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">laborchestrator</span><span class="w"> </span><span class="kn">import</span> <span class="n">structures</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">step</span> <span class="o">=</span> <span class="n">structures</span><span class="o">.</span><span class="n">ProcessStep</span><span class="p">(</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Read Absorbance&quot;</span><span class="p">,</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>    <span class="n">main_device</span><span class="o">=</span><span class="n">structures</span><span class="o">.</span><span class="n">DeviceInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;PlateReader&quot;</span><span class="p">),</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fct&quot;</span><span class="p">:</span> <span class="s2">&quot;absorbance&quot;</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;450nm&quot;</span><span class="p">}</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="p">)</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="n">duration</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_estimated_duration</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="k">if</span> <span class="n">duration</span><span class="p">:</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estimated duration: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No historical data available&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:296</p>
+<hr />
+<h3 id="get_estimated_durations">get_estimated_durations()</h3>
+<p>Estimates durations for multiple process steps.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_estimated_durations</span><span class="p">(</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>    <span class="n">steps</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">structures</span><span class="o">.</span><span class="n">ProcessStep</span><span class="p">],</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.95</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>steps</code> (List[structures.ProcessStep]): List of steps to estimate
+- <code>confidence</code> (float): Confidence level (default 0.95)</p>
+<p><strong>Returns</strong>: List of estimated durations in seconds (None for steps without historical data)</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">step1</span><span class="p">,</span> <span class="n">step2</span><span class="p">,</span> <span class="n">step3</span><span class="p">]</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="n">durations</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_estimated_durations</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">duration</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">durations</span><span class="p">):</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>    <span class="k">if</span> <span class="n">duration</span><span class="p">:</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: No estimate&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:322</p>
+<hr />
+<h2 id="certificate-management-methods">Certificate Management Methods</h2>
+<h3 id="write_server_certificate">write_server_certificate()</h3>
+<p>Stores an SSL/TLS certificate for a device.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">db</span><span class="o">.</span><span class="n">write_server_certificate</span><span class="p">(</span><span class="n">device_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cert</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>device_name</code> (str): Name of the device
+- <code>cert</code> (str): Certificate content (PEM format)</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;device_cert.pem&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    <span class="n">cert_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="n">db</span><span class="o">.</span><span class="n">write_server_certificate</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">,</span> <span class="n">cert_content</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:405</p>
+<hr />
+<h3 id="get_server_certificate">get_server_certificate()</h3>
+<p>Retrieves the SSL/TLS certificate for a device.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">db</span><span class="o">.</span><span class="n">get_server_certificate</span><span class="p">(</span><span class="n">device_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
+</span></code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>device_name</code> (str): Name of the device</p>
+<p><strong>Returns</strong>: Certificate content string, or None if not set</p>
+<p><strong>Example</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">cert</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_server_certificate</span><span class="p">(</span><span class="s2">&quot;Hamilton_STAR&quot;</span><span class="p">)</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="k">if</span> <span class="n">cert</span><span class="p">:</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;retrieved_cert.pem&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cert</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>See also</strong>: status_db_implementation.py:414</p>
+<hr />
+<h2 id="data-models">Data Models</h2>
+<h3 id="device">Device</h3>
+<p>Represents a laboratory device.</p>
+<p><strong>Fields</strong>:
+- <code>lara_name</code> (CharField): Unique device identifier
+- <code>num_slots</code> (IntegerField): Number of available positions
+- <code>lara_uri</code> (URLField): Network endpoint
+- <code>server_certificate</code> (TextField, nullable): SSL/TLS certificate</p>
+<p><strong>See also</strong>: job_logs/models.py:4</p>
+<hr />
+<h3 id="position">Position</h3>
+<p>Represents a position/slot on a device.</p>
+<p><strong>Fields</strong>:
+- <code>device</code> (ForeignKey): Parent device
+- <code>slot_number</code> (IntegerField): Position index (0-indexed)
+- <code>deep_well_suited</code> (BooleanField): Whether position supports deep-well plates</p>
+<p><strong>See also</strong>: job_logs/models.py:19</p>
+<hr />
+<h3 id="container">Container</h3>
+<p>Represents a physical container (plate, tube, etc.).</p>
+<p><strong>Fields</strong>:
+- <code>current_pos</code> (ForeignKey): Current position
+- <code>starting_pos</code> (ForeignKey): Original position
+- <code>barcode</code> (CharField): Barcode identifier
+- <code>lidded</code> (BooleanField): Whether lid is on
+- <code>lid_pos</code> (ForeignKey, nullable): Position of lid if removed
+- <code>removed</code> (BooleanField): Whether removed from platform
+- <code>labware_uuid</code> (UUIDField): Labware type identifier</p>
+<p><strong>See also</strong>: job_logs/models.py:29</p>
+<hr />
+<h3 id="processstep">ProcessStep</h3>
+<p>Represents a process step execution.</p>
+<p><strong>Fields</strong>:
+- <code>start</code> (DateTimeField): Start time
+- <code>finish</code> (DateTimeField): Finish time
+- <code>executing_device</code> (ForeignKey): Device that executed the step
+- <code>container</code> (ForeignKey, nullable): Container involved
+- <code>experiment</code> (ForeignKey, nullable): Parent experiment
+- <code>process_name</code> (CharField): Name of the process
+- <code>is_simulation</code> (BooleanField): Whether this was a simulation
+- <code>parameters</code> (TextField): JSON string of parameters</p>
+<p><strong>Methods</strong>:
+- <code>get_duration()</code>: Returns duration in seconds</p>
+<p><strong>See also</strong>: job_logs/models.py:58</p>
+<hr />
+<h3 id="movestep">MoveStep</h3>
+<p>Specialized ProcessStep for container movements.</p>
+<p><strong>Inherits from</strong>: ProcessStep</p>
+<p><strong>Additional Fields</strong>:
+- <code>origin</code> (ForeignKey): Source position
+- <code>destination</code> (ForeignKey): Target position
+- <code>lidded_before</code> (BooleanField): Lid status before move
+- <code>lidded_after</code> (BooleanField): Lid status after move
+- <code>barcode_read</code> (BooleanField): Whether barcode was read during move
+- <code>uri_format</code> (CharField): URI format used</p>
+<p><strong>See also</strong>: job_logs/models.py:78</p>
+<hr />
+<h3 id="experiment">Experiment</h3>
+<p>Represents an experiment execution.</p>
+<p><strong>Fields</strong>:
+- <code>experiment_uuid</code> (UUIDField): Unique identifier
+- <code>process</code> (ForeignKey): Process definition used</p>
+<p><strong>See also</strong>: job_logs/models.py:52</p>
+<hr />
+<h3 id="process">Process</h3>
+<p>Represents a reusable process definition.</p>
+<p><strong>Fields</strong>:
+- <code>name</code> (CharField): Process name
+- <code>pythonlab_description</code> (TextField): Source code or description
+- <code>process_uuid</code> (UUIDField): Unique identifier</p>
+<p><strong>See also</strong>: job_logs/models.py:45</p>
+<hr />
+<h2 id="error-handling">Error Handling</h2>
+<p>Most methods will log errors and warnings but may not raise exceptions. Check return values and logs for error details.</p>
+<p><strong>Example error handling pattern</strong>:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="c1"># Enable logging</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="c1"># Perform operations</span>
+</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>    <span class="n">container</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">get_cont_info_by_barcode</span><span class="p">(</span><span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>    <span class="k">if</span> <span class="n">container</span><span class="p">:</span>
+</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a>        <span class="n">db</span><span class="o">.</span><span class="n">moved_container</span><span class="p">(</span><span class="s2">&quot;Device1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Device2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;BC12345&quot;</span><span class="p">)</span>
+</span><span id="__span-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-49-12"><a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Container not found&quot;</span><span class="p">)</span>
+</span><span id="__span-49-13"><a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-49-14"><a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Operation failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><strong><a href="../managing-devices/">Managing Devices</a></strong>: Device configuration guide</li>
+<li><strong><a href="../managing-containers/">Managing Containers</a></strong>: Container tracking guide</li>
+<li><strong><a href="../advanced-usage/">Advanced Usage</a></strong>: Experiments and duration estimation</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../../assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>
