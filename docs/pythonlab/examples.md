@@ -2,17 +2,7 @@
 
 This document provides complete examples of PLProcessReader-compliant processes, from simple to complex.
 
-## Table of Contents
-
-1. [Basic Physics Process](#basic-physics-process)
-2. [Simple Bioprocess](#simple-bioprocess)
-3. [Runtime Decision Process](#runtime-decision-process)
-4. [Growth and Centrifugation Process](#growth-and-centrifugation-process)
-5. [Complex Multi-Decision Process](#complex-multi-decision-process)
-
 ## Basic Physics Process
-
-**Source:** `tests/test_data/physics_mini_example.py`
 
 This minimal example demonstrates:
 - Creating a custom ServiceResource
@@ -239,8 +229,6 @@ class SimpleBioProcess(PLProcess):
 ---
 
 ## Runtime Decision Process
-
-**Source:** `tests/test_data/runtime_decision_process.py`
 
 Demonstrates runtime conditional branching based on measurements.
 
@@ -792,33 +780,3 @@ try:
 except nx.NetworkXException as e:
     print(f"Error calculating critical path: {e}")
 ```
-
-## Summary
-
-These examples demonstrate:
-
-1. **Basic Concepts**
-   - Custom ServiceResources
-   - Runtime variables and computations
-   - Simple linear workflows
-
-2. **Intermediate Concepts**
-   - Movement between devices
-   - Lid management
-   - Loops and iteration
-   - Starting positions
-
-3. **Advanced Concepts**
-   - Runtime conditional branching
-   - Multiple decision points
-   - Nested decisions
-   - Multiple labware operations
-   - Complex convergence patterns
-
-4. **Analysis Tools**
-   - Graph statistics
-   - Critical path calculation
-   - Export to various formats
-   - Visualization
-
-Use these examples as templates for your own processes, adapting the patterns to your specific laboratory workflows.
