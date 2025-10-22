@@ -1,6 +1,6 @@
 # Quick Start Guide: Writing Processes
 
-This is a condensed quick-start guide. For detailed information, see [writing_processes.md](writing_processes.md).
+This is a condensed quick-start guide. For detailed information, see [writing_processes](writing_processes.md).
 
 ## The 3 Required Methods
 
