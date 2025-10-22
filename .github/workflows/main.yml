@@ -8,8 +8,9 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
-      - name: Install package
-        run: pip install .
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
       - name: deploy
         uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
         env:
