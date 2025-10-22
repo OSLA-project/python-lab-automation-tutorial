@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
+      - name: Install package
+        run: pip install .
       - name: deploy
         uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
         env:
