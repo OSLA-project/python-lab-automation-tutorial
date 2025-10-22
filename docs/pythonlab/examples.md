@@ -94,14 +94,16 @@ class PhysicsMiniProcess(PLProcess):
 
 ### Resulting Workflow
 
-```
-[Wire] (labware node)
-   │
-   ├─→ [measure_amperage] → [I] (variable)
-   │                           │
-   ├─→ [measure_voltage] → [U] (variable)
-   │                          │
-   └──────────────────────────┴→ [compute_resistance] → [R] (computation)
+```mermaid
+graph LR
+    Wire["Wire<br/>(labware node)"]
+    Wire --> measure_amperage[measure_amperage]
+    Wire --> measure_voltage[measure_voltage]
+    measure_amperage --> I["I<br/>(variable)"]
+    measure_voltage --> U["U<br/>(variable)"]
+    I --> compute_resistance[compute_resistance]
+    U --> compute_resistance
+    compute_resistance --> R["R<br/>(computation)"]
 ```
 
 ### Key Concepts
@@ -194,29 +196,16 @@ class SimpleBioProcess(PLProcess):
 
 ### Resulting Workflow
 
-```
-[SamplePlate] (labware, origin=Hotel_1, pos=1)
-     │
-     ▼
-[move to Incubator_37C] (duration=20s)
-     │
-     ▼
-[incubate] (duration=7200s, temp=310K, shaking=200rpm)
-     │
-     ▼
-[move to PlateReader] (duration=20s, lidded=False)
-     │
-     ▼
-[single_read] (duration=30s, wavelength=600nm)
-     │
-     ▼
-[absorbance] (variable)
-     │
-     ▼
-[move to Hotel_1] (duration=20s, lidded=True)
-     │
-     ▼
-[store] (duration=10s, position=1)
+```mermaid
+graph LR
+    SamplePlate["SamplePlate<br/>(labware, origin=Hotel_1, pos=1)"]
+    SamplePlate --> move1["move to Incubator_37C<br/>(duration=20s)"]
+    move1 --> incubate["incubate<br/>(duration=7200s, temp=310K, shaking=200rpm)"]
+    incubate --> move2["move to PlateReader<br/>(duration=20s, lidded=False)"]
+    move2 --> read["single_read<br/>(duration=30s, wavelength=600nm)"]
+    read --> absorbance["absorbance<br/>(variable)"]
+    absorbance --> move3["move to Hotel_1<br/>(duration=20s, lidded=True)"]
+    move3 --> store["store<br/>(duration=10s, position=1)"]
 ```
 
 ### Key Concepts
@@ -330,41 +319,23 @@ class RuntimeDecisionProcess(PLProcess):
 
 ### Resulting Workflow
 
-```
-[cont_0] (labware)
-    │
-    ▼
-[move to Incubator1]
-    │
-    ▼
-[incubate] (80s)
-    │
-    ▼
-[move to ReaderPool]
-    │
-    ▼
-[single_read] → [absorb] (variable)
-    │              │
-    │              ▼
-    │         [compute avg] → [avg_abs] (computation)
-    │                            │
-    │                            ▼
-    │                    [if avg_abs < 0.6] (if_node)
-    │                       ╱              ╲
-    │                   True              False
-    │                    ╱                  ╲
-    │         [move to Incubator1]     [skip to next]
-    │                  │
-    │                  ▼
-    │            [incubate] (80s)
-    │                  │
-    └──────────────────┴─────────────────────┘
-                       │
-                       ▼
-            [move to LabwareStorage_200]
-                       │
-                       ▼
-                    [store]
+```mermaid
+graph LR
+    cont_0["cont_0<br/>(labware)"]
+    cont_0 --> move1[move to Incubator1]
+    move1 --> incubate1["incubate<br/>(80s)"]
+    incubate1 --> move2[move to ReaderPool]
+    move2 --> read[single_read]
+    read --> absorb["absorb<br/>(variable)"]
+    absorb --> compute["compute avg"]
+    compute --> avg_abs["avg_abs<br/>(computation)"]
+    avg_abs --> if_node{"if avg_abs < 0.6<br/>(if_node)"}
+    if_node -->|True| move3[move to Incubator1]
+    if_node -->|False| merge[merge point]
+    move3 --> incubate2["incubate<br/>(80s)"]
+    incubate2 --> merge
+    merge --> move4[move to LabwareStorage_200]
+    move4 --> store[store]
 ```
 
 ### Key Concepts
@@ -501,37 +472,23 @@ class GrowthCentrifugationProcess(PLProcess):
 
 ### Workflow Highlights
 
-```
-[4 plates in storage]
-        │
-        ▼
-[barcode scanning loop] (4 operations)
-        │
-        ▼
-[move all to incubator] (4 operations)
-        │
-        ├─→ [incubate cont_0] (1800s)
-        │       │
-        │       ▼
-        │   [move to reader]
-        │       │
-        │       ▼
-        │   [measure cont_0]
-        │
-        ├─→ [incubate cont_1] (1800s)
-        │
-        ├─→ [incubate cont_2] (3600s)
-        │
-        └─→ [incubate cont_3] (3600s)
-                │
-                ▼
-[centrifuge ALL plates] (1200s, rpm=50)
-                │
-                ▼
-[measurement loop for all plates]
-                │
-                ▼
-[return all to storage]
+```mermaid
+graph LR
+    storage["4 plates in storage"]
+    storage --> barcode["barcode scanning loop<br/>(4 operations)"]
+    barcode --> move_all["move all to incubator<br/>(4 operations)"]
+    move_all --> incubate0["incubate cont_0<br/>(1800s)"]
+    move_all --> incubate1["incubate cont_1<br/>(1800s)"]
+    move_all --> incubate2["incubate cont_2<br/>(3600s)"]
+    move_all --> incubate3["incubate cont_3<br/>(3600s)"]
+    incubate0 --> move_reader["move to reader"]
+    move_reader --> measure0["measure cont_0"]
+    incubate1 --> centrifuge
+    incubate2 --> centrifuge
+    incubate3 --> centrifuge
+    measure0 --> centrifuge["centrifuge ALL plates<br/>(1200s, rpm=50)"]
+    centrifuge --> measure_loop["measurement loop<br/>for all plates"]
+    measure_loop --> return["return all to storage"]
 ```
 
 ### Key Concepts
@@ -642,45 +599,30 @@ class ComplexDecisionProcess(PLProcess):
 
 ### Workflow Structure
 
-```
-For each plate:
-    [incubate] (3600s)
-         │
-         ▼
-    [measure 600nm] → [abs_600]
-         │               │
-         │               ▼
-         │        [calculate density]
-         │               │
-         │               ▼
-         │      [if density < 0.3]
-         │         ╱    │    ╲
-         │     True   False   ...
-         │       │      │
-         │  [incubate  [if density < 0.7]
-         │   7200s]     ╱        ╲
-         │            True      False
-         │             │          │
-         │        [incubate]  [measure 660nm]
-         │         3600s]         │
-         │                        ▼
-         │                   [calculate ratio]
-         │                        │
-         │                        ▼
-         │                  [if ratio > 1.5]
-         │                    ╱         ╲
-         │                 True        False
-         │                  │            │
-         │             [incubate]     [skip]
-         │              1800s]
-         │                  │
-         └──────────────────┴─────────────┘
-                            │
-                            ▼
-                    [final measurement]
-                            │
-                            ▼
-                        [storage]
+```mermaid
+graph LR
+    start["For each plate"]
+    start --> incubate1["incubate<br/>(3600s)"]
+    incubate1 --> measure600["measure 600nm"]
+    measure600 --> abs_600["abs_600<br/>(variable)"]
+    abs_600 --> calc_density["calculate density"]
+    calc_density --> density["density<br/>(computation)"]
+    density --> if1{"if density < 0.3"}
+    if1 -->|True| incubate_long["incubate<br/>(7200s)"]
+    if1 -->|False| if2{"if density < 0.7"}
+    if2 -->|True| incubate_med["incubate<br/>(3600s)"]
+    if2 -->|False| measure660["measure 660nm"]
+    measure660 --> abs_660["abs_660<br/>(variable)"]
+    abs_660 --> calc_ratio["calculate ratio"]
+    calc_ratio --> ratio["ratio<br/>(computation)"]
+    ratio --> if3{"if ratio > 1.5"}
+    if3 -->|True| incubate_short["incubate<br/>(1800s)"]
+    if3 -->|False| merge
+    incubate_long --> merge[merge point]
+    incubate_med --> merge
+    incubate_short --> merge
+    merge --> final_measure["final measurement"]
+    final_measure --> storage[storage]
 ```
 
 ### Key Concepts

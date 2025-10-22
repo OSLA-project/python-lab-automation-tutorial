@@ -19,6 +19,9 @@ class MyWrapper(DeviceInterface):
 ### ProcessStep
 Describes the step that should be executed.
 
+hoi
+bla
+
 ### ContainerInfo
 Describes the container that is handled
 
