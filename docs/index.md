@@ -4,7 +4,8 @@
 
 # What is the LARAsuite ?
 The LARAsuite is a freely and openly available collection of applications, libraries, databases and tools to plan, manage, 
-create, monitor and evaluate (automated) processes in the laboratory.
+create, monitor and evaluate (automated) processes in the laboratory. It has been developed by Mark Dörr and Stefan Maak
+from the [LARA group](https://lara.uni-greifswald.de/team/) at the University of Greifswald.
 
 The vision is to cover all steps of laboratory work in a uniform framework with standardized communication protocols and data formats (like SiLA2, AnIML). 
 
