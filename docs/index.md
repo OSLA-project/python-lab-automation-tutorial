@@ -23,7 +23,7 @@ The LARAsuite is modular and consists of different components that can be used i
 The most important components are the following:
 
 ### Pythonlab
-The pythonlab package is a framework to define laboratory processes in python syntax. It converts the process 
+The pythonlab package is a framework to define laboratory processes in Python syntax. It converts the process 
 definitions into workflow graphs that can be used by the orchestrator and scheduler.
 
 ### Orchestrator
