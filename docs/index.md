@@ -1,4 +1,23 @@
-# Welcome to MkDocs
+# What is the LARAsuite ?
+The LARAsuite is a freely and openly available collection of applications, libraries, databases and tools to plan, manage, create, monitor and evaluate (automated) processes in the laboratory.
+
+The vision is to cover all steps of laboratory work in a uniform framework with standardized communication protocols and data formats (like SiLA2, AnIML).
+
+One very strong aspect in science is reproducibility, transparency and accountability.
+
+One needs to be able to trust what someone else did, and it is important to exactly understand all the steps leading to a certain result. This is in the core of science.
+
+The LARA workflow
+LARA tries cover all aspects of a common laboratory workflow, starting from the planning of the experiments until the final presentation of the results.
+
+lara-workflow
+The LARA structure
+The LARAsuite is very modular, enabling a flexible extension of the concept.
+
+lara-structure
+The LARAsuite architecture
+The current architecture looks like:
+
 
 Things to explain:
 
