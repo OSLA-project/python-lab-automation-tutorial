@@ -10,7 +10,7 @@ from the [LARA group](https://lara.uni-greifswald.de/team/) at the University of
 The vision is to cover all steps of laboratory work in a uniform framework with standardized communication protocols and data formats (like SiLA2, AnIML). 
 
 ## The LARA workflow
-LARA tries cover all aspects of a common laboratory workflow, starting from the planning of the experiments until the final presentation of the results.
+LARA tries to cover all aspects of a common laboratory workflow, starting from the planning of the experiments until the final presentation of the results.
 
 ## The LARASuite architecture
 The LARAsuite is modular and consists of different components that can be used independently or together to create a complete laboratory automation solution.
