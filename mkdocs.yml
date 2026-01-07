@@ -22,6 +22,21 @@ theme:
   logo: assets/LARA_logo.svg
   features:
     - content.code.copy
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: blue
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 plugins:
   - search
