@@ -137,7 +137,7 @@ While the process runs you can observe different features of our framework.
    2. Process step nodes in the graph turn yellow while they are being executed and green when they are finished. Pink means there was an error.
    3. Labware is shown by barcode in the gantt chart as soon as a barcode is read/assigned
 2. Live updates of the database
-   1. In the database view which auto-reloads all labware is listed with barcode ans current position
+   1. In the database view (which auto-reloads to reflect modifications), all labware is listed with its barcode and current position.
    2. You can check and manipulate in the [admin view](http://127.0.0.1:8000/admin/) of the database what the results, duration, and starting times of which steps were and which labware was involved. The credentials are the ones you chose during the installation process for superuser.
 
 
