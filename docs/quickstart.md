@@ -135,7 +135,7 @@ While the process runs you can observe different features of our framework.
 1. Live updates of the process in the orchestrator:
    1. The gantt chart has a moving bar of where in time you currently are
    2. Process step nodes in the graph turn yellow while they are being executed and green when they are finished. Pink means there was an error.
-   3. Labware is shown by barcode in the gantt chart as soon as a barcode is read/assigned
+   3. If a barcode for any labware equipment is read or assigned, it is shown in the gantt chart
 2. Live updates of the database
    1. In the database view (which auto-reloads to reflect modifications), all labware is listed with its barcode and current position.
    2. The [admin view](http://127.0.0.1:8000/admin/) of the database allows you to see the results and the labware involved, as well as to change the duration and starting time of each step. The credentials are the ones you chose during the installation process for the superuser.
