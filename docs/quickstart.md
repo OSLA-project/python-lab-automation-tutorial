@@ -104,7 +104,7 @@ You can access the GUI for different components:
 To see how the example servers are controlled from the orchestrator, go to the the orchestrator GUI and load and start one of the
 example processes.
 - GreeterTest: Sends a Hello-World to the sila2-example-server
-- MoverTest: You can view the robots movements in the roboter GUI
+- MoverTest: You can view the robots movements in the robot GUI
 - HumanTest: you will have to finish the tasks in the human interaction GUI
 - InterestingExample: A more complex workflow with runtime decisions based on human interaction
 
