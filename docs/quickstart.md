@@ -123,7 +123,7 @@ example processes.
    data structure as string into the textfield above (you might have to move the graph a bit down, so it gets visible).
 4. Your loaded process should appear in the second dropdown menu. Choose it.
 5. Click on "Add Containers to DB". This creates entries for all labware in that process in the positions described in
-   the process in case there isn`t already labware. Existing labware is considered to belong to that process. You can 
+   the process in case there isn't already labware. Existing labware is considered to belong to that process. You can 
    see all present labware in the database view which updates automatically.
 6. (Optional) Click on "Schedule Process" to get a predicted schedule. It will appear at gantt chart.
 7. Click on "Start Process". This will update the schedule and will execute steps accordingly.
