@@ -9,6 +9,11 @@ from the [LARA group](https://lara.uni-greifswald.de/team/) at the University of
 
 The vision is to cover all steps of laboratory work in a uniform framework with standardized communication protocols and data formats (like SiLA2, AnIML). 
 
+## Target Audience
+
+People who have a robotic arm with several devices they can access via SiLA (or at least python) and look for a
+framework do describe, orchestrate and schedule workflows on these devices. Some programming skills are necessary.
+
 ## The LARA workflow
 LARA tries to cover all aspects of a common laboratory workflow, starting from the planning of the experiments until the final presentation of the results.
 
