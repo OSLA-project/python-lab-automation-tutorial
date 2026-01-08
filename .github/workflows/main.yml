@@ -1,5 +1,8 @@
 name: Deploy pages
-on: [release, push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   release_pages:
