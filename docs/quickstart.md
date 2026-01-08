@@ -40,7 +40,7 @@ For example with pyvenv on linux:
 ```bash
     pip install -r requirements_servers.txt
 ```
-   - to also install requirements for stronger scheduling algorithms add:
+   - to also install requirements for stronger scheduling algorithms, run:
 ```bash
     pip install -r requirements_mip_cp.txt
 ```
