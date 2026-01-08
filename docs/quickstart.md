@@ -25,10 +25,10 @@ docker-compose up
 ```
 
 ## Running with Python
-First, use your favourite tool to create and activate a new python environment with python 3.11 or higher. 
+First, use your favorite tool to create and activate a new Python environment with Python 3.11 or higher. 
 For example with pyvenv on linux:
 ```bash
-   python -m venv labautomation
+   Python -m venv labautomation
    source labautomation/bin/activate
 ```
 3. Install all necessary packages:
@@ -59,7 +59,7 @@ Setup: Run and follow the instructions to create an admin login to Django. On Wi
 
 Fill the database: Run
 ```bash
-    python scripts/add_lab_setup_to_db.py
+    Python scripts/add_lab_setup_to_db.py
 ```
 This adds the lab setup as described in platform_config.yml to the database.
 Rerun this script after you customized the config file.
@@ -125,7 +125,7 @@ example processes.
 5. Click on "Add Containers to DB". This creates entries for all labware in that process in the positions described in
    the process in case there isn't already labware. Existing labware is considered to belong to that process. You can 
    see all present labware in the database view which updates automatically.
-6. (Optional) Click on "Schedule Process" to get a predicted schedule. It will appear at gantt chart.
+6. (Optional) Click on "Schedule Process" to get a predicted schedule. It will appear the Gantt chart.
 7. Click on "Start Process". This will update the schedule and will execute steps accordingly.
    You can monitor the progress in the orchestrator GUI and the labware movements in the database view.
 
@@ -133,9 +133,9 @@ example processes.
 While the process runs you can observe different features of our framework.
 
 1. Live updates of the process in the orchestrator:
-   1. The gantt chart has a moving bar of where in time you currently are
+   1. The Gantt chart has a moving bar of where in time you currently are
    2. Process step nodes in the graph turn yellow while they are being executed and green when they are finished. Pink means there was an error.
-   3. If a barcode for any labware equipment is read or assigned, it is shown in the gantt chart
+   3. If a barcode for any labware equipment is read or assigned, it is shown in the Gantt chart
 2. Live updates of the database
    1. In the database view (which auto-reloads to reflect modifications), all labware is listed with its barcode and current position.
    2. The [admin view](http://127.0.0.1:8000/admin/) of the database allows you to see the results and the labware involved, as well as to change the duration and starting time of each step. The credentials are the ones you chose during the installation process for the superuser.
