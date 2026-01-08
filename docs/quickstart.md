@@ -51,7 +51,7 @@ Installation: Run
     git clone https://gitlab.com/OpenLabAutomation/lab-automation-packages/platform_status_db.git
     pip install -e platform_status_db/.
 ```
-Setup: Run and follow the instructions to create an admin login to django. On windows you will have execute the steps manually.
+Setup: Run and follow the instructions to create an admin login to Django. On Windows you will have execute the steps manually.
 
 ```bash
     bash scripts/init_db.sh
