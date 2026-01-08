@@ -15,7 +15,7 @@ cd adaption-template
 
 ## Running with Docker
 Running the example with docker is straightforward, but it does require that you have the 
-[Docker  Desktop](https://docs.docker.com/get-started/get-docker/) or
+[Docker Desktop](https://docs.docker.com/get-started/get-docker/) or
 [Docker Engine](https://docs.docker.com/engine/install/) installed on your machine.
 
 To run the example with Docker, go to the root directory of the cloned repository and run the following command:
