@@ -134,7 +134,7 @@ While the process runs you can observe different features of our framework.
 
 1. Live updates of the process in the orchestrator:
    1. The gantt chart has a moving bar of where in time you currently are
-   2. Process step nodes in the graph turn to yellow while they are being executed and to green when they are finished. Pink means there was an error.
+   2. Process step nodes in the graph turn yellow while they are being executed and green when they are finished. Pink means there was an error.
    3. Labware is shown by barcode in the gantt chart as soon as a barcode is read/assigned
 2. Live updates of the database
    1. In the database view which auto-reloads all labware is listed with barcode ans current position
