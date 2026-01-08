@@ -32,7 +32,7 @@ For example with pyvenv on linux:
    source labautomation/bin/activate
 ```
 3. Install all necessary packages:
-   - to install all mandatory dependencies run:
+   - to install all mandatory dependencies, run:
 ```bash
     pip install -r requirements.txt -e .
 ```
