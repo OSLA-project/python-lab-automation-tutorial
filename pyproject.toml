@@ -13,3 +13,4 @@ dependencies = [
     "pygments>=2.19.2",
     "pymdown-extensions>=10.16.1",
 ]
+simpleicon

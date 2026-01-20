@@ -1,0 +1,8 @@
+.grid.cards > :is(ul, ol) > li {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid.cards > :is(ul, ol) > li > :last-child {
+    margin-top: auto;
+}

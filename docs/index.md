@@ -26,36 +26,54 @@ framework do describe, orchestrate and schedule workflows on these devices. Some
 
 ## Architecture Overview
 
-The most important components are the following:
+<div class="grid cards" markdown>
 
-### PythonLab
+-    __Pythonlab__
 
-The PythonLab package is a framework to define laboratory processes in python syntax. It converts the process
-definitions into workflow graphs that can be used by the orchestrator and scheduler.
+    ---
 
-### Orchestrator
+    The PythonLab package is a framework to define laboratory processes in python syntax. It converts the process
+    definitions into workflow graphs that can be used by the orchestrator and scheduler.
+    
+    :simple-gitlab: [PythonLab git repository](https://gitlab.com/OpenLabAutomation/lab-automation-packages/pythonLab)
 
-The orchestrator is the component that executes the workflow graphs created by PythonLab. It manages the execution of
-the processes,
-allocates resources, and communicates with the devices through the wrappers.
+-    __Lab orchestrator__
 
-### Scheduler
+    ---
 
-The scheduler is responsible for optimizing the execution of the workflows. It takes into account the availability of
-resources,
-the dependencies between tasks, and the overall goals of the laboratory automation.
+    The orchestrator is the component that executes the workflow graphs created by PythonLab. It manages the execution of
+    the processes, allocates resources, and communicates with the devices through the wrappers.
+    
+    :simple-gitlab: [Lab orchestrator git repository](https://gitlab.com/OpenLabAutomation/lab-automation-packages/laborchestrator)
 
-### Platform status database
+-    __Scheduler__
 
-The platform status database keeps track of the status of all devices, labware, and substances in the laboratory.
-It provides real-time information to the orchestrator and scheduler. It also provides a UI to set the initial status of
-the lab.
+    ---
 
-### SiLA servers
+    The scheduler is responsible for optimizing the execution of the workflows. It takes into account the availability of
+    resources, the dependencies between tasks, and the overall goals of the laboratory automation.
+    
+    :simple-gitlab: [Scheduler git repository](https://gitlab.com/OpenLabAutomation/lab-automation-packages/lab-scheduler)
 
-Our framework uses [SiLA2](https://sila-standard.com/) as the standard communication protocol between the orchestrator
-and the devices.
-SiLA2 is a widely used standard in laboratory automation that defines a common interface for laboratory devices.
-However, the core framework is designed to be agnostic about the communication protocol. Other protocols can be used by
-implementing appropriate wrappers.
+-    __Platform status database__
 
+    ---
+
+    The platform status database keeps track of the status of all devices, labware, and substances in the laboratory.
+    It provides real-time information to the orchestrator and scheduler. It also provides a UI to set the initial status of
+    the lab.
+    
+    :simple-gitlab: [Platform status database git repository](https://gitlab.com/OpenLabAutomation/lab-automation-packages/platform_status_db)
+
+-    __SiLA servers__
+
+    ---
+
+    Our framework uses [SiLA2](https://sila-standard.com/) as the standard communication protocol between the orchestrator
+    and the devices. SiLA2 is a widely used standard in laboratory automation that defines a common interface for laboratory devices.
+    However, the core framework is designed to be agnostic about the communication protocol. Other protocols can be used by
+    implementing appropriate wrappers.
+    
+    :simple-gitlab: [SiLA2 standard website](https://sila-standard.com/)
+
+</div>
