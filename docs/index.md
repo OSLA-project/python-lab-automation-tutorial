@@ -13,6 +13,12 @@ complete laboratory automation solution.
 It has been developed by Mark Dörr and Stefan Maak
 from the [LARA group](https://lara.uni-greifswald.de/team/) at the University of Greifswald.
 
+## Quickstart
+
+To get started with LARA Lab Automation, please refer to the [Quickstart guide](quickstart.md) which provides
+step-by-step instructions on setting up the framework and running your first laboratory automation process in a
+simulated environment.
+
 ## Target Audience
 
 People who have a robotic arm with several devices they can access via SiLA (or at least python) and look for a
