@@ -1,7 +1,8 @@
 # Quickstart
 ## Simulated example
 The fastest way to try out the LARA suite is by running the simulated example provided by the 
-[adaptation template](https://gitlab.com/OpenLabAutomation/adaption-template).
+[adaptation template](https://gitlab.com/OpenLabAutomation/adaption-template). After the adaptation is set up, you can start customizing it to your needs by following the 
+instructions in the [customization guide](customization.md).
 
 There are two ways to run the example: using Docker or running it directly with Python.
 
