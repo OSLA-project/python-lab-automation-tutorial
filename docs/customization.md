@@ -23,3 +23,9 @@ some of which we link to below:
 - [LARA Lab Automation device integration](https://gitlab.com/OpenLabAutomation/device-integration)
 - [SiLA Awesome List of Servers](https://gitlab.com/SiLA2/sila_awesome#servers)
 
+
+## Write your device wrappers
+The communication between the lab orchestrator and the sila servers is handled by device wrappers. These wrappers 
+translate the high-level commands defined in the process descriptions to specific SiLA commands. The 
+[quickstart](quickstart.md) example comes with a couple of example wrappers that you can use as a starting point. 
+You can find more information about writing device wrappers in the [wrappers documentation](wrappers.md).
