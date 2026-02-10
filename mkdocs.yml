@@ -41,5 +41,14 @@ theme:
 plugins:
   - search
   - mermaid2
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: true
+            docstring_style: sphinx
+
   - panzoom:
       full_screen: true
