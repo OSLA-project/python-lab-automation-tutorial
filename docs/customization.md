@@ -51,4 +51,4 @@ provides some guidance on how to do this.
 The second part is to configure locations of your labware and the devices with respect to the robot arm.
 This is done with the RobotTeachingService endpoint on the GenericRobotArm SiLA server. 
 
-More info on configuring the arm and the locations can be found in the [robot arm documentation](robot%20arm.md).
+More info on configuring the arm and the locations can be found in the [robot arm documentation](robot arm.md).
