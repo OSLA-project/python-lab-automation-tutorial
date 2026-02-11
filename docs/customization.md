@@ -33,7 +33,7 @@ You can find more information about writing device wrappers in the [wrappers doc
 ## Configure your lab definition {#lab_definition}
 You lab config file describes the available resources in your lab and their capacities. In the quickstart template this
 file is named `platform_config.yaml`. You will need to modify this file to match the resources available in your lab.
-More information about the lab definition can be found at [lab configuration](lab_configuration.md).
+More information about the lab definition can be found at [lab configuration](lab configuration.md).
 
 ## Write your process descriptions {#process_descriptions}
 A Pythonlab process description describes the steps that should be executed in the lab. They are written in python and
