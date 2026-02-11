@@ -1,6 +1,6 @@
 # Wrappers
 Wrappers are the interface between the lab orchestrator and the actual devices. They translate the high-level commands
-defined in ?? to specific SILA commands.
+defined in PythonLab to specific SILA commands.
 
 ## The wrapper structure
 
@@ -19,8 +19,6 @@ class MyWrapper(DeviceInterface):
 ### ProcessStep
 Describes the step that should be executed.
 
-hoi
-bla
 
 ### ContainerInfo
 Describes the container that is handled
