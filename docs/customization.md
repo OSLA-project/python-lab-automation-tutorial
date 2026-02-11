@@ -31,7 +31,7 @@ translate the high-level commands defined in the process descriptions to specifi
 You can find more information about writing device wrappers in the [wrappers documentation](wrappers.md).
 
 ## Configure your lab definition {#lab_definition}
-You lab config file describes the available resources in your lab and their capacities. In the quickstart template this
+Your lab config file describes the available resources in your lab and their capacities. In the quickstart template this
 file is named `platform_config.yaml`. You will need to modify this file to match the resources available in your lab.
 More information about the lab definition can be found at [lab configuration](lab configuration.md).
 
