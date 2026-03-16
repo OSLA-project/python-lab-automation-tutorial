@@ -1,0 +1,15 @@
+## Resources
+
+### ServiceResources
+
+{% for service in service_subclasses %}
+::: {{ service.__module__ }}.{{ service.__qualname__ }}
+
+{% endfor %}
+
+### LabwareResources
+
+{% for labware in labware_subclasses %}
+::: {{ labware.__module__ }}.{{ labware.__qualname__ }}
+
+{% endfor %}

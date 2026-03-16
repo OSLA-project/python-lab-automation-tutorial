@@ -5,11 +5,17 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "jinja2>=3.1.6",
     "mkdocs>=1.6.1",
     "mkdocs-glightbox>=0.5.1",
     "mkdocs-material>=9.6.22",
     "mkdocs-mermaid2-plugin>=1.2.3",
     "mkdocs-panzoom-plugin>=0.4.2",
+    "mkdocstrings[python]>=0.18",
     "pygments>=2.19.2",
     "pymdown-extensions>=10.16.1",
+    "pythonlab",
 ]
+
+[tool.uv.sources]
+pythonlab = { url = "https://gitlab.com/api/v4/projects/70367030/packages/pypi/files/8343bd3a8ed255c9e47e2cba859bd0545639b02e148993b82c3a4d8c9952ec1a/pythonlab-0.2.3-py3-none-any.whl" }
