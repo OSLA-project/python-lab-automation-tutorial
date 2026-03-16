@@ -219,7 +219,7 @@ dependencies = [
     { name = "mkdocstrings", extra = ["python"] },
     { name = "pygments" },
     { name = "pymdown-extensions" },
-    { name = "pythonlab" },
+    { name = "uupythonlab" },
 ]
 
 [package.metadata]
@@ -233,7 +233,7 @@ requires-dist = [
     { name = "mkdocstrings", extras = ["python"], specifier = ">=0.18" },
     { name = "pygments", specifier = ">=2.19.2" },
     { name = "pymdown-extensions", specifier = ">=10.16.1" },
-    { name = "pythonlab", url = "https://gitlab.com/api/v4/projects/70367030/packages/pypi/files/8343bd3a8ed255c9e47e2cba859bd0545639b02e148993b82c3a4d8c9952ec1a/pythonlab-0.2.3-py3-none-any.whl" },
+    { name = "uupythonlab" },
 ]
 
 [[package]]
@@ -546,24 +546,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pythonlab"
-version = "0.2.3"
-source = { url = "https://gitlab.com/api/v4/projects/70367030/packages/pypi/files/8343bd3a8ed255c9e47e2cba859bd0545639b02e148993b82c3a4d8c9952ec1a/pythonlab-0.2.3-py3-none-any.whl" }
-dependencies = [
-    { name = "graphviz" },
-    { name = "networkx" },
-]
-wheels = [
-    { url = "https://gitlab.com/api/v4/projects/70367030/packages/pypi/files/8343bd3a8ed255c9e47e2cba859bd0545639b02e148993b82c3a4d8c9952ec1a/pythonlab-0.2.3-py3-none-any.whl", hash = "sha256:8343bd3a8ed255c9e47e2cba859bd0545639b02e148993b82c3a4d8c9952ec1a" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "graphviz" },
-    { name = "networkx" },
-]
-
-[[package]]
 name = "pyyaml"
 version = "6.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -687,6 +669,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz", hash = "sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760", size = 393185, upload-time = "2025-06-18T14:07:41.644Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a7/c2/fe1e52489ae3122415c51f387e221dd0773709bad6c6cdaa599e8a2c5185/urllib3-2.5.0-py3-none-any.whl", hash = "sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc", size = 129795, upload-time = "2025-06-18T14:07:40.39Z" },
+]
+
+[[package]]
+name = "uupythonlab"
+version = "0.2.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "graphviz" },
+    { name = "networkx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/26/7a/ff47eaa8e9057580fa80d68cd9a5cf572d38a2df7003ea3aabf7ea2dde1d/uupythonlab-0.2.4.tar.gz", hash = "sha256:ef95fd8e16be997267a3f31639e298bcff2a2e0d6e34705b8ac11c062a59ea7a", size = 18284, upload-time = "2026-02-16T10:04:22.596Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1b/d8/6c3862966f8a86e96ce96e977b24c11f7d5aa16036d72b65df27dc1e2ea7/uupythonlab-0.2.4-py3-none-any.whl", hash = "sha256:08e40a2c30286f3d42636be839e8e5aa43fb7ecafd2216def2fa8359e7de450b", size = 15933, upload-time = "2026-02-16T10:04:21.297Z" },
 ]
 
 [[package]]
