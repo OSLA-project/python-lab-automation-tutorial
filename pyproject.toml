@@ -14,7 +14,7 @@ dependencies = [
     "mkdocstrings[python]>=0.18",
     "pygments>=2.19.2",
     "pymdown-extensions>=10.16.1",
-    "uupythonlab",
+    "uupythonlab>=0.2.4",
 ]
 
 [tool.setuptools]
