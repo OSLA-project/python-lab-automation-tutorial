@@ -56,6 +56,20 @@ Uses Material theme with: mermaid diagrams (mkdocs-mermaid2-plugin), image light
 
 GitHub Actions (`.github/workflows/main.yml`) deploys to GitHub Pages on every push to `main` via `mkdocs gh-deploy --force`.
 
+### Reference repositories
+
+Sibling repositories are available locally for reading when writing or improving documentation:
+
+| Repository | Purpose |
+|------------|---------|
+| `pythonLab` | Core PythonLab package (main subject of the tutorial) |
+| `laborchestrator` | Lab Orchestrator — schedules and executes process DAGs |
+| `lab-scheduler` | Lab Scheduler package |
+| `platform_status_db` | Platform status database service |
+| `genericroboticarm` | SiLA2 server for a generic robotic arm (concrete device wrapper example) |
+| `adaption-template` | Template for adapting LARA to a custom lab |
+| `VU-lab` | Full real-world LARA deployment (best source for end-to-end usage examples) |
+
 ### Software packages
 This documentation describes the usage of the LARA lab automation toolkit, which consists of the following software packages:
 
