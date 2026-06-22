@@ -19,6 +19,7 @@ jobs:
           python -m pip install -e .
       - name: deploy
         run: |
+          make build
           mkdocs gh-deploy --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

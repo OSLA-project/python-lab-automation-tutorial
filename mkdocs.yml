@@ -1,4 +1,6 @@
 site_name: Lab automation docs
+site_dir: site
+docs_dir: docs
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -20,6 +22,7 @@ markdown_extensions:
 theme:
   name: material
   logo: assets/LARA_logo.svg
+  favicon: assets/LARA_logo.ico
   features:
     - content.code.copy
   palette:
