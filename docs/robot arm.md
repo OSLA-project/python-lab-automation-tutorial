@@ -141,4 +141,5 @@ To support a new hardware model, implement the `RobotInterface` and start the se
 genericroboticarm --arm-impl path/to/your_implementation.py
 ```
 
-See the [adaption guide](https://gitlab.com/OpenLabAutomation/device-integration/genericroboticarm/-/blob/main/docs/adaption.md) in the source repository for details.
+See the [adaptation guide](https://gitlab.com/OpenLabAutomation/device-integration/genericroboticarm/-/blob/main/docs/adaption.md) in the source repository for details.
+adaption
