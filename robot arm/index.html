@@ -1,0 +1,1282 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../usecases/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/LARA_logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Generic Robotic Arm - Lab automation docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".d2", ".mermaid"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generic-robotic-arm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Lab automation docs" class="md-header__button md-logo" aria-label="Lab automation docs" data-md-component="logo">
+      
+  <img src="../assets/LARA_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lab automation docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generic Robotic Arm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Lab automation docs" class="md-nav__button md-logo" aria-label="Lab automation docs" data-md-component="logo">
+      
+  <img src="../assets/LARA_logo.svg" alt="logo">
+
+    </a>
+    Lab automation docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab%20configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generic Robotic Arm
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generic Robotic Arm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting the server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teaching-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teaching positions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teaching positions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-positions-via-sila2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving positions via SiLA2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-position-graphs-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where position graphs are stored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position naming convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-the-arm-via-sila2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling the arm via SiLA2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlling the arm via SiLA2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotController
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labwaretransfermanipulatorcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LabwareTransferManipulatorController
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gripcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GripController
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-arm-in-a-pythonlab-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the arm in a PythonLab workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapting-to-a-new-arm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapting to a new arm
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usecases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrappers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wrappers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythonlab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pythonlab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pythonlab/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Api reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pythonlab/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pythonLab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pythonlab/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting the server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teaching-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teaching positions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teaching positions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-positions-via-sila2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving positions via SiLA2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-position-graphs-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where position graphs are stored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position naming convention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-the-arm-via-sila2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling the arm via SiLA2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlling the arm via SiLA2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#robotcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotController
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labwaretransfermanipulatorcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LabwareTransferManipulatorController
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gripcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GripController
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-arm-in-a-pythonlab-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the arm in a PythonLab workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapting-to-a-new-arm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapting to a new arm
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="generic-robotic-arm">Generic Robotic Arm</h1>
+<p>The <a href="https://gitlab.com/OpenLabAutomation/device-integration/genericroboticarm.git">genericroboticarm</a> package provides a SiLA2 server and teaching interface for robotic arms.
+It ships with built-in support for several arm models (Dummy/simulation, JoyIt, Dorna2, UFactory XArm, Precise Flex 400, Precise Flex on a rail) and can be adapted to new hardware.</p>
+<h2 id="installation">Installation</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://gitlab.com/OpenLabAutomation/device-integration/genericroboticarm.git
+</span></code></pre></div>
+<h2 id="starting-the-server">Starting the server</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>genericroboticarm<span class="w"> </span>-r<span class="w"> </span>&lt;ArmImplementation&gt;
+</span></code></pre></div>
+<p>To try without real hardware, use the built-in <code>Dummy</code> implementation:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>genericroboticarm<span class="w"> </span>-r<span class="w"> </span>Dummy
+</span></code></pre></div>
+<p>On startup you will see output like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Dash is running on http://127.0.0.1:8055/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>WARNING| sila_server.__start: Starting SiLA server without encryption.
+</span></code></pre></div>
+<p>This starts two services:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Address</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dash visualisation</td>
+<td><code>http://127.0.0.1:8055/</code></td>
+<td>Interactive position graph + keyboard control</td>
+</tr>
+<tr>
+<td>SiLA2 server</td>
+<td><code>127.0.0.1:50051</code></td>
+<td>High-level command API used by the orchestrator</td>
+</tr>
+</tbody>
+</table>
+<h2 id="teaching-positions">Teaching positions</h2>
+<p>Before the arm can be used in automated workflows, you need to teach it the positions it will navigate between (e.g. device slots, a home position, intermediate waypoints).</p>
+<h3 id="keyboard-control">Keyboard control</h3>
+<p>Open <code>http://127.0.0.1:8055/</code> in a browser and click the text box in the upper-left corner to give it focus.
+Use the following keys to move the arm to the desired position:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Movement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrow keys</td>
+<td>X/Y plane</td>
+</tr>
+<tr>
+<td><code>a</code> / <code>y</code></td>
+<td>Z axis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="saving-positions-via-sila2">Saving positions via SiLA2</h3>
+<p>Once the arm is at the correct coordinates, save the position using the <strong>RobotTeachingService</strong> SiLA2 feature.
+You can do this with the <a href="https://gitlab.com/unitelabs/sila2/sila-browser">SiLA Browser</a> (auto-discovers the server) or via Python:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Example using the sila2 Python client</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">await</span> <span class="n">teaching_client</span><span class="o">.</span><span class="n">AddPosition</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="s2">&quot;device_A_slot_1&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Positions are stored as nodes in a position graph (a <code>.gml</code> file). Connections between nodes define the paths the arm can travel.
+The </p>
+<p>Key teaching commands:</p>
+<table>
+<thead>
+<tr>
+<th>SiLA command</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddPosition(identifier)</code></td>
+<td>Save current coordinates as a named node</td>
+</tr>
+<tr>
+<td><code>AddConnection(tail, head)</code></td>
+<td>Add an edge between two nodes</td>
+</tr>
+<tr>
+<td><code>ReteachPosition(identifier)</code></td>
+<td>Update coordinates of an existing node</td>
+</tr>
+<tr>
+<td><code>RemovePosition(identifier)</code></td>
+<td>Delete a node</td>
+</tr>
+<tr>
+<td><code>RemoveConnection(tail, head)</code></td>
+<td>Delete an edge</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-position-graphs-are-stored">Where position graphs are stored</h3>
+<p>Position graphs are saved as <code>.gml</code> files named <code>position_graph_&lt;ArmName&gt;.gml</code> in the platform's user config directory:</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>~/.config/GenericRoboticArm/</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>~/Library/Preferences/GenericRoboticArm/</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>%LOCALAPPDATA%\GenericRoboticArm\GenericRoboticArm\</code></td>
+</tr>
+</tbody>
+</table>
+<p>The exact path is printed at startup: <code>Using &lt;path&gt; to load/store position graph.</code></p>
+<p>A custom directory can be set by passing <code>graph_dir</code> in a custom arm implementation.</p>
+<h3 id="position-naming-convention">Position naming convention</h3>
+<p>Positions are referenced by a string identifier. When addressing a specific device slot from the orchestrator, the default convention is <code>&lt;device&gt;&lt;slot_index&gt;</code> (concatenation). The Dash visualisation shows the current position graph and the arm's current location.</p>
+<h2 id="controlling-the-arm-via-sila2">Controlling the arm via SiLA2</h2>
+<p>The server exposes three SiLA2 features for runtime control:</p>
+<h3 id="robotcontroller">RobotController</h3>
+<p>High-level movement and safety commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MoveToPosition(position)</code></td>
+<td>Navigate to a named node along graph edges</td>
+</tr>
+<tr>
+<td><code>PickPlate(site)</code></td>
+<td>Pick labware from a device site</td>
+</tr>
+<tr>
+<td><code>PlacePlate(site)</code></td>
+<td>Place labware at a device site</td>
+</tr>
+<tr>
+<td><code>MovePlate(origin, target)</code></td>
+<td>Pick from one site and place at another</td>
+</tr>
+<tr>
+<td><code>SetSpeed(percentage)</code></td>
+<td>Adjust movement speed (0–100 %)</td>
+</tr>
+<tr>
+<td><code>SetAcceleration(percentage)</code></td>
+<td>Adjust acceleration (0–100 %)</td>
+</tr>
+<tr>
+<td><code>EmergencyStop()</code></td>
+<td>Immediately halt all movement</td>
+</tr>
+<tr>
+<td><code>Reinitialize()</code></td>
+<td>Re-establish connection to the arm hardware</td>
+</tr>
+</tbody>
+</table>
+<h3 id="labwaretransfermanipulatorcontroller">LabwareTransferManipulatorController</h3>
+<p>Handles the full pick-and-place sequence with handover positions:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PrepareForInput(handover, internal, labware_type, labware_id)</code></td>
+<td>Move arm to receive labware</td>
+</tr>
+<tr>
+<td><code>PrepareForOutput(handover, internal)</code></td>
+<td>Move arm to deliver labware</td>
+</tr>
+<tr>
+<td><code>PutLabware(handover, intermediate_actions)</code></td>
+<td>Execute the put motion</td>
+</tr>
+<tr>
+<td><code>GetLabware(handover, intermediate_actions)</code></td>
+<td>Execute the get motion</td>
+</tr>
+<tr>
+<td><code>GetAvailableHandoverPositions()</code></td>
+<td>List all taught handover positions</td>
+</tr>
+<tr>
+<td><code>GetNumberOfInternalPositions()</code></td>
+<td>Query internal storage capacity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gripcontroller">GripController</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Grip()</code></td>
+<td>Close the gripper</td>
+</tr>
+<tr>
+<td><code>Release()</code></td>
+<td>Open the gripper</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-the-arm-in-a-pythonlab-workflow">Using the arm in a PythonLab workflow</h2>
+<p>The arm's SiLA2 server is registered as a Service resource in the orchestrator. From a PythonLab process you interact with it through the orchestrator's labware transfer interface — you do not call the SiLA2 commands directly. See the <a href="../wrappers/">Wrappers</a> page for how device wrappers translate PythonLab steps into SiLA2 calls.</p>
+<h2 id="adapting-to-a-new-arm">Adapting to a new arm</h2>
+<p>To support a new hardware model, implement the <code>RobotInterface</code> and start the server with your implementation:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>genericroboticarm<span class="w"> </span>--arm-impl<span class="w"> </span>path/to/your_implementation.py
+</span></code></pre></div>
+<p>See the <a href="https://gitlab.com/OpenLabAutomation/device-integration/genericroboticarm/-/blob/main/docs/adaption.md">adaptation guide</a> in the source repository for details.
+adaption</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>
